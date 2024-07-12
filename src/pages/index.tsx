@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <HStack height="100%">
-      <Stack width="200px" height="100%" borderRight="1px solid" borderColor="action.disabled">
+      <Stack width="250px" height="100%" borderRight="1px solid" borderColor="action.disabled">
         {map(data?.data, ({ id, title }, index) => {
 
           const isItemActive = toString(id) === todoId

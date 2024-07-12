@@ -14,6 +14,9 @@ dependencies:
   '@mui/material':
     specifier: ^5.15.16
     version: 5.15.16(@emotion/react@11.11.4)(@emotion/styled@11.11.5)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
+  '@tabler/icons-react':
+    specifier: ^3.10.0
+    version: 3.10.0(react@18.3.1)
   '@tanstack/react-query':
     specifier: '4'
     version: 4.36.1(react-dom@18.3.1)(react@18.3.1)
@@ -23,6 +26,9 @@ dependencies:
   '@types/lodash':
     specifier: ^4.17.1
     version: 4.17.1
+  '@uidotdev/usehooks':
+    specifier: ^2.4.1
+    version: 2.4.1(react-dom@18.3.1)(react@18.3.1)
   axios:
     specifier: ^1.6.8
     version: 1.6.8
@@ -33,8 +39,8 @@ dependencies:
     specifier: ^2.4.6
     version: 2.4.6(react@18.3.1)
   formik-mui-inputs:
-    specifier: ^1.0.4
-    version: 1.0.4(@types/node@20.12.8)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)(vite@5.2.11)
+    specifier: ^1.0.5
+    version: 1.0.5(@types/node@20.12.8)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)(vite@5.2.11)
   framer-motion:
     specifier: ^11.1.7
     version: 11.1.7(react-dom@18.3.1)(react@18.3.1)
@@ -59,6 +65,9 @@ dependencies:
   react-toastify:
     specifier: ^10.0.5
     version: 10.0.5(react-dom@18.3.1)(react@18.3.1)
+  use-debounce:
+    specifier: ^10.0.1
+    version: 10.0.1(react@18.3.1)
   yup:
     specifier: ^1.4.0
     version: 1.4.0
@@ -1179,6 +1188,19 @@ packages:
       '@swc/counter': 0.1.3
     dev: true
 
+  /@tabler/icons-react@3.10.0(react@18.3.1):
+    resolution: {integrity: sha512-FTES0wJLIV+M9Ggng0j/6Kn/j43ZuBukR5n6DNV8Npk4woPCDcRjA+2KzKQyvSdwtPMAM6o1e8fQBPDS337Spg==}
+    peerDependencies:
+      react: '>= 16'
+    dependencies:
+      '@tabler/icons': 3.10.0
+      react: 18.3.1
+    dev: false
+
+  /@tabler/icons@3.10.0:
+    resolution: {integrity: sha512-jCMO+hDTw8Gn1CNb15zIENLQ9b0UplGXtjMnEUhDoKH+Q4fta8tBLUxZpPpFtpV+q+gzGqfM76xNAoD1GBpmnA==}
+    dev: false
+
   /@tanstack/query-core@4.36.1:
     resolution: {integrity: sha512-DJSilV5+ytBP1FbFcEJovv4rnnm/CokuVvrBEtW/Va9DvuJ3HksbXUJEpI0aV1KtuL4ZoO9AVE6PyNLzF7tLeA==}
     dev: false
@@ -1407,6 +1429,17 @@ packages:
       '@typescript-eslint/types': 7.8.0
       eslint-visitor-keys: 3.4.3
     dev: true
+
+  /@uidotdev/usehooks@2.4.1(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-1I+RwWyS+kdv3Mv0Vmc+p0dPYH0DTRAo04HLyXReYBL9AeseDWUJyi4THuksBJcu9F0Pih69Ak150VDnqbVnXg==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      react: '>=18.0.0'
+      react-dom: '>=18.0.0'
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    dev: false
 
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
@@ -2059,8 +2092,8 @@ packages:
       mime-types: 2.1.35
     dev: false
 
-  /formik-mui-inputs@1.0.4(@types/node@20.12.8)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)(vite@5.2.11):
-    resolution: {integrity: sha512-r7gdLgIto5JbRcgGoPjYiclk8P8uNE0UiywbjmrDzRTv+0Acbd6y1BaJ66YL8phrzMpeQLtpcjXMWGwpmJllgQ==}
+  /formik-mui-inputs@1.0.5(@types/node@20.12.8)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)(typescript@5.4.5)(vite@5.2.11):
+    resolution: {integrity: sha512-LAf/uSEfylU30sdWpNBwMx0GSixkIWYh+2vHAOr+1GltMfAQDeB7kpVn21OjvHrCwD/9v1J1m2MVa9x9mMGxTw==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -3124,6 +3157,15 @@ packages:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
       punycode: 2.3.1
+
+  /use-debounce@10.0.1(react@18.3.1):
+    resolution: {integrity: sha512-0uUXjOfm44e6z4LZ/woZvkM8FwV1wiuoB6xnrrOmeAEjRDDzTLQNRFtYHvqUsJdrz1X37j0rVGIVp144GLHGKg==}
+    engines: {node: '>= 16.0.0'}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      react: 18.3.1
+    dev: false
 
   /use-sync-external-store@1.2.0(react@18.3.1):
     resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}

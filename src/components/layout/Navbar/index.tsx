@@ -1,7 +1,29 @@
 import NavItem from "@/components/layout/Navbar/NavItem";
 import HStack, { HStackProps } from "@/components/ui/HStack";
+import { Box, CircularProgress, Icon, Stack } from "@mui/material";
+import { useIsMutating } from "@tanstack/react-query";
 import { get, map } from "lodash";
 import { ReactNode, useEffect, useMemo, useState } from "react";
+import { IconDeviceFloppy } from '@tabler/icons-react'
+import { AnimatePresence, Variants, motion } from 'framer-motion'
+
+
+const variants: Variants = {
+  popIn: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: .5
+    }
+  },
+  popOut: {
+    scale: 0,
+    opacity: 0,
+    transition: {
+      duration: .5
+    }
+  }
+}
 
 type Route = {
   route: string;
@@ -51,6 +73,9 @@ const Navbar = (props: Props) => {
     }
   }, []);
 
+  const isMutating = useIsMutating() > 0
+
+
   return (
     <HStack
       bgcolor="white"
@@ -72,6 +97,26 @@ const Navbar = (props: Props) => {
           </NavItem>
         );
       })}
+
+      <Box ml="auto" alignSelf="stretch" px={2} position="relative">
+        <AnimatePresence>
+          {
+            isMutating &&
+            <Stack justifyContent="center" alignItems="center" sx={{ position: "absolute", inset: 0 }} component={motion.div} variants={variants} initial="popOut" exit="popOut" animate="popIn">
+              <CircularProgress size="1rem" color="inherit" />
+            </Stack>
+          }
+        </AnimatePresence>
+        <AnimatePresence>
+          {
+            !isMutating && <Stack justifyContent="center" alignItems="center" sx={{ position: "absolute", inset: 0 }} component={motion.div} variants={variants} initial="popOut" exit="popOut" animate="popIn">
+              <Icon color="disabled" fontSize="medium" >
+                <IconDeviceFloppy />
+              </Icon>
+            </Stack>
+          }
+        </AnimatePresence>
+      </Box>
     </HStack>
   );
 };
